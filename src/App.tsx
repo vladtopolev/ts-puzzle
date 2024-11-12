@@ -1,7 +1,7 @@
 // src/App.tsx
 import React, { useState } from "react";
 import { Challenges } from "./data";
-import Dashboard from "./components/Dashboard";
+import Dashboard from "./components/Dashboard/Dashboard";
 
 const App: React.FC = () => {
   const [challenge, setChallenge] = useState(Challenges[0]);

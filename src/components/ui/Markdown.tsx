@@ -1,9 +1,9 @@
-import { useTheme } from "@mui/material";
+import { SxProps, useTheme } from "@mui/material";
 import Box from "@mui/material/Box";
 import MarkdownComponent from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 
-const Markdown = ({ markdown }: { markdown: string }) => {
+const Markdown = ({ children, sx }: { children: string; sx?: SxProps }) => {
   const theme = useTheme();
   return (
     <Box
@@ -18,6 +18,7 @@ const Markdown = ({ markdown }: { markdown: string }) => {
           backgroundColor: "grey.100",
           p: 1,
         },
+        ...sx,
       }}
     >
       <MarkdownComponent
@@ -51,7 +52,7 @@ const Markdown = ({ markdown }: { markdown: string }) => {
           },
         }}
       >
-        {markdown}
+        {children}
       </MarkdownComponent>
     </Box>
   );

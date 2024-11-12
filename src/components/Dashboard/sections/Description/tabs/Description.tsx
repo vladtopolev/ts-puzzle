@@ -1,9 +1,7 @@
-import DescriptionIcon from "@mui/icons-material/Description";
 import { Chip, Paper, Typography, useTheme } from "@mui/material";
 import Box from "@mui/material/Box";
-import Markdown from "../../ui/Markdown";
+import Markdown from "../../../../ui/Markdown";
 import DifficultyLabel from "../components/DifficultyLabel";
-import HeaderSection from "../components/HeaderSection";
 
 const Description = ({
   title,
@@ -19,10 +17,6 @@ const Description = ({
   const theme = useTheme();
   return (
     <Paper sx={{ height: "100%", overflow: "hidden" }}>
-      <HeaderSection
-        title="Description"
-        icon={<DescriptionIcon sx={{ fontSize: 14, color: "info.light" }} />}
-      />
       <Box sx={{ p: 1 }}>
         <Typography variant="h6" sx={{ fontSize: 24, fontWeight: 600 }}>
           {title}
@@ -33,7 +27,7 @@ const Description = ({
             <Chip label={label} key={label} size="small" icon={<></>} />
           ))}
         </Box>
-        <Markdown markdown={description} />
+        <Markdown>{description}</Markdown>
       </Box>
     </Paper>
   );
