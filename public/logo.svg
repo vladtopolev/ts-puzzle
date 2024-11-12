@@ -1,0 +1,10 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <!-- "TS" Text Centered -->
+    <text x="50%" y="50%" fill="#007ACC" font-size="80" font-family="Arial, sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="middle">
+      TS
+    </text>
+  
+    <!-- Puzzle Piece Icon as a Symbol of Challenge, Placed to the Top Right of "TS" -->
+    <circle cx="140" cy="40" r="20" fill="#007ACC" />
+    <rect x="135" y="35" width="10" height="10" fill="#FFFFFF" />
+  </svg>
