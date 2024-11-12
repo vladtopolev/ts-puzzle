@@ -4,9 +4,11 @@ import { Button, Paper } from "@mui/material";
 import Box from "@mui/material/Box";
 import { useMeasure } from "react-use";
 import HeaderSection from "../../components/HeaderSection";
+import { useDashboardContext } from "../../Dashboard.context";
 
 const Code = () => {
   const [ref, reactRef] = useMeasure();
+  const { userCode, setUserCode, runTests } = useDashboardContext();
 
   return (
     <Paper
@@ -41,13 +43,22 @@ const Code = () => {
           }}
         >
           <Editor
+            value={userCode}
+            language="typescript"
+            onChange={(value) => value && setUserCode(value)}
             height={reactRef.height}
-            options={{ minimap: { enabled: false } }}
+            options={{ minimap: { enabled: false }, formatOnType: true }}
           />
         </Box>
       </Box>
       <Box sx={{ display: "flex", gap: 2, justifyContent: "flex-end", p: 1 }}>
-        <Button variant="outlined" size="small">
+        <Button
+          variant="outlined"
+          size="small"
+          onClick={() => {
+            runTests();
+          }}
+        >
           Run
         </Button>
         <Button variant="contained" size="small">

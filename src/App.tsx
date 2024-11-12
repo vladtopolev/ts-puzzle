@@ -6,7 +6,7 @@ import Dashboard from "./components/Dashboard/Dashboard";
 const App: React.FC = () => {
   const [challenge, setChallenge] = useState(Challenges[0]);
 
-  return <Dashboard {...challenge} />;
+  return <Dashboard challenge={challenge} />;
 };
 
 const challengeTemplate = `// TypeScript Challenge: Create a type LastItem that extracts the last item of an array

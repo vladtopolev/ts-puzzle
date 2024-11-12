@@ -10,19 +10,7 @@ import { TestCase } from "../../../../data";
 
 const iconSx = { fontSize: 14, color: "info.light" };
 
-export const EnhancedDescription = ({
-  title,
-  description,
-  labels,
-  difficulty,
-  testCases,
-}: {
-  title: string;
-  description: string;
-  labels: string[];
-  difficulty: string;
-  testCases: TestCase[];
-}) => {
+export const EnhancedDescription = () => {
   return (
     <Section
       activeTab="description"
@@ -31,20 +19,13 @@ export const EnhancedDescription = ({
           {
             title: "Description",
             icon: <DescriptionIcon sx={iconSx} />,
-            view: (
-              <Description
-                title={title}
-                description={description}
-                labels={labels}
-                difficulty={difficulty}
-              />
-            ),
+            view: <Description />,
             id: "description",
           },
           {
             title: "Test Cases",
             icon: <ChecklistRtlIcon sx={iconSx} />,
-            view: <TestCases testCases={testCases} />,
+            view: <TestCases />,
             id: "tests",
           },
           {

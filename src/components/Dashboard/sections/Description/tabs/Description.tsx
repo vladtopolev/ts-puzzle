@@ -2,19 +2,12 @@ import { Chip, Paper, Typography, useTheme } from "@mui/material";
 import Box from "@mui/material/Box";
 import Markdown from "../../../../ui/Markdown";
 import DifficultyLabel from "../components/DifficultyLabel";
+import { useDashboardContext } from "../../../Dashboard.context";
 
-const Description = ({
-  title,
-  description,
-  labels,
-  difficulty,
-}: {
-  title: string;
-  description: string;
-  labels: string[];
-  difficulty: string;
-}) => {
-  const theme = useTheme();
+const Description = () => {
+  const {
+    challenge: { title, labels, difficulty, description },
+  } = useDashboardContext();
   return (
     <Paper sx={{ height: "100%", overflow: "hidden" }}>
       <Box sx={{ p: 1 }}>

@@ -36,7 +36,7 @@ function Section<
               py: 0.5,
               px: 1,
               borderRadius: 1,
-              opacity: activeTabIndex === index ? 1 : 0.5,
+              opacity: activeTabIndex === index ? 1 : 0.3,
               "&:hover": {
                 backgroundColor: "grey.200",
                 opacity: 1,

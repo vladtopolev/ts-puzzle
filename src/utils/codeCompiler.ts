@@ -1,24 +1,26 @@
 import * as ts from "typescript";
 
-const CODE_UTILS = `
-export type Equal<X, Y> =
+export const CODE_UTILS = `
+type Equal<X, Y> =
   (<T>() => T extends X ? 1 : 2) extends
   (<T>() => T extends Y ? 1 : 2) ? true : false;
-export type Expect<T extends true> = T;
+type Expect<T extends true> = T;
 `;
 
-export const transpileCode = async (code: string) => {
-  const ts = await import("typescript");
+export const transpileCode = (code: string) => {
   return ts.transpileModule(code, {
     compilerOptions: { module: ts.ModuleKind.ESNext, strict: true },
     reportDiagnostics: true,
   });
 };
 
-export const isCodeTranspiledSuccessfully = async (code: string) => {
-  const result = await transpileCode(code);
+export const isCodeTranspiledSuccessfully = (code: string) => {
+  const result = transpileCode(code);
   if (result.diagnostics && result.diagnostics.length > 0) {
     return false;
   }
   return true;
 };
+
+export const testCase = (props: { case: string; expected: string }) =>
+  `type Result = Expect<Equal<${props.expected},${props.case}>>`;

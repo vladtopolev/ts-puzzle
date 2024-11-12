@@ -1,8 +1,12 @@
 import { Box, Typography } from "@mui/material";
 import { TestCase } from "../../../../../data";
 import Markdown from "../../../../ui/Markdown";
+import { useDashboardContext } from "../../../Dashboard.context";
 
-const TestCases = ({ testCases }: { testCases: TestCase[] }) => {
+const TestCases = () => {
+  const {
+    challenge: { testCases },
+  } = useDashboardContext();
   return (
     <Box
       sx={{

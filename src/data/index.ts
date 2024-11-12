@@ -38,6 +38,7 @@ string
         case: "MyReturnType<() => string>",
         expected: "string",
       },
+      /*
       {
         case: "MyReturnType<() => 123>",
         expected: "123",
@@ -118,7 +119,7 @@ MyReturnType<typeof fn1>;
 \`\`\`
 `,
         },
-      },
+      },*/
     ],
     description: `
 Implement the built-in \`ReturnType<T>\` generic without using it.
